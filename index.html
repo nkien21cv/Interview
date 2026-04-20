@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Trung Kiên — Marketing Executive candidate, BHS Miền Nam</title>
+<style>
+:root {
+  /* Color system from DESIGN.md */
+  --bg: #FFFFFF;
+  --surface: #F8FAFC;
+  --surface-2: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --border-1: #F1F5F9;
+  --border-2: #E2E8F0;
+  --border-3: #CBD5E1;
+
+  /* Teal primary ramp */
+  --teal-50: #ECF9F8;
+  --teal-100: #D9F4F1;
+  --teal-200: #B4E8E3;
+  --teal-300: #8EDDD4;
+  --teal-400: #56CCBF;
+  --teal-500: #14B8A6;
+  --teal-600: #119E8F;
+  --teal-700: #0E8174;
+  --teal-800: #0A6056;
+  --teal-900: #073F38;
+  --teal-950: #042521;
+
+  /* Semantic */
+  --accent: #14B8A6;
+  --accent-deep: #0E8174;
+  --success: #14B8A6;
+  --warn: #F59E0B;
+  --danger: #EF4444;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Atmospheric background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(219, 234, 254, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(244, 252, 227, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === NAV === */
+.nav {
+  position: sticky; top: 16px; z-index: 100;
+  padding: 0 24px;
+  margin: 16px auto 0;
+  max-width: 1200px;
+}
+
+.nav-shell {
+  padding: 1px;
+  border-radius: 9999px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-inner {
+  padding: 8px 16px 8px 24px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
+}
+
+.nav-brand {
+  font-size: 16px; font-weight: 600;
+  color: var(--text-primary); cursor: pointer;
+  background: none; border: none;
+  letter-spacing: -0.025em;
+  padding: 4px 8px;
+}
+
+.nav-brand span { color: var(--accent); }
+
+.nav-tabs { display: flex; gap: 4px; list-style: none; }
+
+.nav-tab {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: none; border: none;
+  font-family: inherit;
+  border-radius: 9999px;
+  transition: all 150ms ease;
+  letter-spacing: normal;
+}
+
+.nav-tab:hover { color: var(--text-primary); background: var(--surface); }
+
+.nav-tab.active {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--accent);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  border: 0.8px solid var(--border-2);
+}
+
+.nav-mobile-toggle {
+  display: none; background: none; border: none;
+  font-size: 18px; cursor: pointer;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+
+/* === LAYOUT === */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.wrap-narrow { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.page { display: none; animation: fadeIn 700ms cubic-bezier(0.4, 0, 0.2, 1); }
+.page.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === GRADIENT BORDER SHELL — the hero pattern === */
+.shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-lg);
+}
+
+.shell-inner {
+  border-radius: 23px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.shell-solid .shell-inner {
+  background: var(--bg);
+}
+
+.shell-soft {
+  padding: 1px;
+  border-radius: 16px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+}
+
+.shell-soft-inner {
+  border-radius: 15px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* === HERO === */
+.hero {
+  padding: 64px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.12) 0%, transparent 60%);
+  z-index: -1;
+}
+
+.hero-top {
+  display: flex; justify-content: space-between;
+  margin-bottom: 48px;
+  align-items: center;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 0.8px solid var(--border-2);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: normal;
+}
+
+.pill-accent {
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border-color: var(--teal-200);
+}
+
+.hero-meta-bar {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.hero h1 .accent { color: var(--accent); font-weight: 500; }
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+/* Portrait card */
+.hero-portrait-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 23px;
+  background: var(--surface);
+}
+
+.hero-portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.hero-portrait-caption {
+  position: absolute; bottom: 12px; left: 12px; right: 12px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.8px solid var(--border-2);
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.meta-card {
+  padding: 1px;
+  border-radius: 16px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+}
+
+.meta-card-inner {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.meta-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+
+/* === SECTIONS === */
+section.section { padding: 64px 0; }
+
+.section-head {
+  margin-bottom: 40px;
+}
+
+.section-num {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(20, 184, 166, 0.1);
+  color: var(--teal-700);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: normal;
+  border: 0.8px solid var(--teal-200);
+}
+
+.section-title {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  max-width: 800px;
+}
+
+.section-title .accent { color: var(--accent); font-weight: 500; }
+
+/* === STATUS CARDS === */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.status-card {
+  padding: 32px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-card.over::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--teal-500), var(--teal-300));
+}
+
+.status-card.under::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--warn), rgba(245, 158, 11, 0.4));
+}
+
+.status-label {
+  font-size: 12px;
+  letter-spacing: normal;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-word {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.status-card.over .status-word { color: var(--teal-700); }
+.status-card.under .status-word { color: var(--warn); }
+
+.status-detail-primary {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 20px;
+}
+
+.status-detail-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* Equation */
+.equation {
+  padding: 40px;
+  border-radius: 23px;
+  background: linear-gradient(135deg, var(--teal-800), var(--teal-900));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.equation::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -10%;
+  width: 50%; height: 200%;
+  background: radial-gradient(ellipse, rgba(20, 184, 166, 0.4) 0%, transparent 60%);
+}
+
+.equation::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.equation-content {
+  position: relative;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  z-index: 2;
+}
+
+.equation-content .plus { color: #86EFAC; font-weight: 600; }
+.equation-content .minus { color: #FCA5A5; font-weight: 600; }
+.equation-content .equal { opacity: 0.4; margin: 0 8px; }
+.equation-content strong { color: var(--teal-200); font-weight: 600; }
+
+/* Skill chips */
+.skill-section-title {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.skill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 0.8px solid var(--border-2);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  border-radius: 9999px;
+  letter-spacing: normal;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-chip.strong {
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border-color: var(--teal-200);
+  font-weight: 500;
+}
+
+/* === JOURNEY === */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.journey-card-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+  transition: all 300ms ease;
+}
+
+.journey-card-shell:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.journey-card {
+  padding: 32px 24px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  height: 100%;
+}
+
+.journey-year {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.journey-co {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.journey-role {
+  font-size: 12px;
+  color: var(--teal-700);
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.journey-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.journey-tag {
+  padding: 4px 12px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 0.8px solid var(--teal-200);
+}
+
+.common-thread {
+  padding: 32px 40px;
+  border-radius: 23px;
+  background: linear-gradient(135deg, var(--teal-50), rgba(219, 234, 254, 0.3));
+  border: 0.8px solid var(--teal-100);
+  margin-bottom: 40px;
+}
+
+.common-thread-label {
+  font-size: 12px;
+  color: var(--teal-700);
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.common-thread-text {
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.common-thread-text .accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Case thumbs */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.case-thumb {
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0.8px solid var(--border-2);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.case-thumb.placeholder::before {
+  content: attr(data-label);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.case-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.label-overline {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+/* === BHS RESEARCH === */
+.research-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.donut-card {
+  padding: 28px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border: 0.8px solid var(--border-1);
+}
+
+.donut-card h4 {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: normal;
+  font-size: 12px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.donut-legend { margin-top: 20px; text-align: left; width: 100%; }
+
+.donut-legend-item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  gap: 10px; align-items: center;
+  padding: 6px 0;
+  font-size: 12px;
+}
+
+.donut-legend-color { width: 12px; height: 12px; border-radius: 9999px; }
+.donut-legend-label { color: var(--text-primary); font-weight: 500; line-height: 16px; }
+.donut-legend-val {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.finding-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.finding-card {
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 0.8px solid var(--border-1);
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 150ms ease;
+}
+
+.finding-card:hover {
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-lg);
+}
+
+.finding-num {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 36px;
+  letter-spacing: -0.04em;
+}
+
+.finding-content h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 4px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.finding-content p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.finding-tag {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 0.8px solid var(--teal-200);
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.finding-tag.red {
+  background: rgba(245, 158, 11, 0.1);
+  color: #B45309;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.screenshots-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.screenshot-item {
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0.8px dashed var(--border-2);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.screenshot-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.screenshot-item.placeholder::before {
+  content: attr(data-label);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* === CONTRIBUTION === */
+.contrib-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contrib-col-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+}
+
+.contrib-col {
+  padding: 32px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contrib-col.short::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--teal-500), var(--teal-300));
+}
+
+.contrib-col.long::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, #DBEAFE, #BCC9DA);
+}
+
+.contrib-col-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 0.8px solid var(--border-1);
+}
+
+.timing-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 0.8px solid var(--teal-200);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.contrib-col.long .timing-pill {
+  background: #EEF5FF;
+  color: #4A5056;
+  border-color: #DBEAFE;
+}
+
+.contrib-col h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.contrib-items { list-style: none; }
+
+.contrib-items li {
+  padding: 16px 0;
+  border-bottom: 0.8px solid var(--border-1);
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px; align-items: start;
+}
+
+.contrib-items li:last-child { border-bottom: none; padding-bottom: 0; }
+.contrib-items li:first-child { padding-top: 0; }
+
+.contrib-items .num {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 20px;
+  letter-spacing: -0.025em;
+}
+
+.contrib-col.long .contrib-items .num { color: #727A84; }
+
+.contrib-items h5 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  letter-spacing: normal;
+}
+
+.contrib-items .task-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.contrib-priority {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--warn);
+  color: white;
+  border-radius: 9999px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: normal;
+}
+
+/* === CTA CARDS === */
+.cta-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cta-card-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.cta-card-shell:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.cta-card {
+  padding: 28px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-card .cta-num {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 32px;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.cta-card h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.cta-card .arrow {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 150ms ease;
+}
+
+.cta-card-shell:hover .arrow { gap: 10px; }
+
+/* === PAGE HEADER === */
+.page-header {
+  padding: 56px 0 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
+  z-index: -1;
+}
+
+.page-header .tab-indicator {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 0.8px solid var(--teal-200);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  max-width: 860px;
+  color: var(--text-primary);
+}
+
+.page-header h1 .accent { color: var(--accent); font-weight: 500; }
+
+.page-header .lede {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* === WORKFLOW === */
+.tools-tier-card-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tools-tier-card {
+  padding: 32px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.tier-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 0.8px solid var(--teal-200);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.tools-tier-card h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.tools-tier-card .sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.base-tool-list {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+
+.base-tool-chip {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.8px solid var(--border-2);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-sm);
+  letter-spacing: normal;
+}
+
+/* AI case cards */
+.ai-cases {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ai-case-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+  transition: all 300ms ease;
+}
+
+.ai-case-shell:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.ai-case {
+  padding: 0;
+  border-radius: 23px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 160px 240px 1fr;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.ai-case-tool {
+  background: linear-gradient(135deg, var(--teal-800), var(--teal-900));
+  color: white;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-case-tool::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -40%;
+  width: 140%; height: 180%;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.5) 0%, transparent 65%);
+}
+
+.ai-case-tool-content { position: relative; z-index: 2; }
+
+.ai-case-tool-name {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  margin-bottom: 4px;
+}
+
+.ai-case-tool-label {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.7;
+  letter-spacing: normal;
+  line-height: 16px;
+}
+
+.ai-case-preview {
+  position: relative;
+  overflow: hidden;
+  background: var(--teal-950);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-case-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ai-case-preview-label {
+  position: absolute;
+  bottom: 8px; left: 8px;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ai-case-detail {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+  align-content: center;
+}
+
+.ai-case-col .col-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.ai-case-col .col-value {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 19px;
+  font-weight: 400;
+}
+
+.ai-case-col.output .col-value {
+  color: var(--teal-700);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ai-case-col.effect {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 0.8px solid var(--border-1);
+}
+
+.ai-case-col.effect .col-label {
+  margin-bottom: 0;
+}
+
+.ai-case-col.effect .col-value {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--teal-500);
+  line-height: 16px;
+}
+
+/* Flow */
+.flow-card-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+  margin-top: 32px;
+}
+
+.flow-card {
+  padding: 40px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.flow-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.flow-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.flow-diagram {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.flow-step {
+  padding: 20px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.8px solid var(--border-2);
+  text-align: center;
+  transition: all 150ms ease;
+}
+
+.flow-step:hover {
+  background: var(--teal-50);
+  border-color: var(--teal-200);
+}
+
+.flow-step-num {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 16px;
+}
+
+.flow-step h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--accent);
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+.flow-step .flow-tool {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 16px;
+  font-weight: 400;
+}
+
+/* === GOALS === */
+.goal-open {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  max-width: 820px;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+}
+
+.goal-open .accent { color: var(--text-primary); font-weight: 600; }
+
+.observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.obs-card-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+}
+
+.obs-card {
+  padding: 40px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.obs-num {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 48px;
+  letter-spacing: -0.025em;
+}
+
+.obs-content h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 14px;
+  max-width: 720px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.obs-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 22px;
+  margin-bottom: 10px;
+  max-width: 760px;
+  font-weight: 400;
+}
+
+.obs-content p:last-child { margin-bottom: 0; }
+
+.obs-content p strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Personal statement */
+.personal-statement-shell {
+  padding: 1px;
+  border-radius: 32px;
+  background: linear-gradient(to right bottom, rgba(20, 184, 166, 0.4), rgba(20, 184, 166, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-xl);
+  margin: 48px 0;
+}
+
+.personal-statement {
+  padding: 56px;
+  border-radius: 31px;
+  background: linear-gradient(135deg, var(--teal-800), var(--teal-900));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-statement::before {
+  content: '';
+  position: absolute;
+  bottom: -40%; right: -10%;
+  width: 55%; height: 180%;
+  background: radial-gradient(ellipse, rgba(20, 184, 166, 0.5) 0%, transparent 60%);
+}
+
+.personal-statement::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
+}
+
+.personal-statement-content { position: relative; z-index: 2; }
+
+.personal-statement .label {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin-bottom: 24px;
+  border: 0.8px solid rgba(255, 255, 255, 0.2);
+}
+
+.personal-statement h3 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  max-width: 820px;
+  letter-spacing: -0.025em;
+}
+
+.personal-statement h3 .accent { color: var(--teal-200); font-weight: 500; }
+
+/* Geography */
+.geography-shell {
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+}
+
+.geography-wrap {
+  padding: 44px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.geography-wrap h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 28px;
+  max-width: 720px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.geography-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.geo-card {
+  padding: 28px;
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.6);
+  border: 0.8px solid var(--border-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.geo-card.hcm {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(20, 184, 166, 0.02));
+  border-color: var(--teal-200);
+}
+
+.geo-card.kh {
+  background: linear-gradient(135deg, rgba(219, 234, 254, 0.5), rgba(219, 234, 254, 0.15));
+  border-color: rgba(188, 201, 218, 0.6);
+}
+
+.geo-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  background: white;
+  border: 0.8px solid var(--border-2);
+}
+
+.geo-card.hcm .geo-tag { color: var(--teal-700); border-color: var(--teal-200); }
+.geo-card.kh .geo-tag { color: #4A5056; }
+
+.geo-card h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.geo-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 22px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.geo-card p:last-child { margin-bottom: 0; }
+
+/* === Q&A === */
+.qa-list {
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+
+.qa-item-shell {
+  padding: 1px;
+  border-radius: 16px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-sm);
+  transition: all 150ms ease;
+}
+
+.qa-item-shell.open {
+  box-shadow: var(--shadow-lg);
+}
+
+.qa-item {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.qa-q {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 40px 1fr 32px;
+  gap: 16px; align-items: start;
+  user-select: none;
+  transition: background 150ms ease;
+}
+
+.qa-q:hover { background: var(--teal-50); }
+
+.qa-num {
+  font-size: 20px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 28px;
+}
+
+.qa-q-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-primary);
+  letter-spacing: normal;
+}
+
+.qa-toggle {
+  width: 32px; height: 32px;
+  border-radius: 9999px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: all 150ms ease;
+  font-weight: 400;
+}
+
+.qa-item-shell.open .qa-toggle {
+  background: var(--teal-500);
+  color: white;
+  transform: rotate(45deg);
+}
+
+.qa-a { max-height: 0; overflow: hidden; transition: max-height 400ms cubic-bezier(0.4, 0, 0.2, 1); }
+.qa-item-shell.open .qa-a { max-height: 1200px; }
+
+.qa-a-inner {
+  padding: 0 24px 24px 80px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.qa-a-inner p { margin-bottom: 12px; }
+.qa-a-inner p:last-child { margin-bottom: 0; }
+
+.qa-a-inner .highlight {
+  background: var(--teal-50);
+  padding: 2px 8px;
+  color: var(--teal-700);
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.qa-a-inner ul { list-style: none; margin: 12px 0; }
+
+.qa-a-inner ul li {
+  padding: 4px 0 4px 20px;
+  position: relative;
+  line-height: 22px;
+}
+
+.qa-a-inner ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 12px;
+  width: 6px; height: 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+}
+
+.qa-a-inner strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* === FOOTER === */
+.foot {
+  padding: 56px 0 64px;
+  margin-top: 32px;
+  position: relative;
+}
+
+.foot-shell {
+  padding: 1px;
+  border-radius: 32px;
+  background: linear-gradient(to right bottom, rgba(20, 184, 166, 0.3), rgba(20, 184, 166, 0.05), rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-xl);
+}
+
+.foot-card {
+  padding: 48px 56px;
+  border-radius: 31px;
+  background: linear-gradient(135deg, var(--teal-800), var(--teal-950));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.foot-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -10%;
+  width: 60%; height: 200%;
+  background: radial-gradient(ellipse, rgba(20, 184, 166, 0.4) 0%, transparent 60%);
+}
+
+.foot-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px; align-items: end;
+}
+
+.foot h2 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  margin-bottom: 20px;
+  max-width: 640px;
+  letter-spacing: -0.04em;
+}
+
+.foot-contact {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.foot-contact a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+  transition: border-color 150ms;
+}
+
+.foot-contact a:hover { border-color: white; }
+
+.foot-sig { text-align: right; }
+
+.foot-sig .name {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  letter-spacing: -0.025em;
+  line-height: 28px;
+}
+
+.foot-sig .role {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* === MOBILE === */
+@media (max-width: 900px) {
+  .nav { top: 8px; padding: 0 16px; }
+  .nav-inner { padding: 6px 8px 6px 16px; }
+  .nav-tabs {
+    display: none;
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 0.8px solid var(--border-2);
+    flex-direction: column; gap: 4px; padding: 8px;
+    min-width: 200px;
+    box-shadow: var(--shadow-lg);
+  }
+  .nav-tabs.mobile-open { display: flex; }
+  .nav-mobile-toggle { display: block; }
+  .nav-tab { padding: 10px 20px; }
+  .wrap, .wrap-narrow { padding: 0 16px; }
+  .hero { padding: 40px 0 56px; }
+  .hero-top { flex-direction: column; gap: 12px; align-items: flex-start; margin-bottom: 32px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-portrait-shell { max-width: 260px; }
+  .hero h1 { font-size: 36px; line-height: 40px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; }
+  .section { padding: 40px 0; }
+  .section-title, .page-header h1, .personal-statement h3, .status-word { font-size: 32px; line-height: 36px; }
+  .equation-content { font-size: 22px; line-height: 30px; }
+  .status-grid, .contrib-split, .cta-tabs, .geography-grid, .journey-grid { grid-template-columns: 1fr; }
+  .research-grid { grid-template-columns: 1fr; }
+  .cases-grid, .screenshots-row { grid-template-columns: 1fr 1fr; }
+  .flow-diagram { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .foot-sig { text-align: left; }
+  .qa-q { padding: 16px 18px; gap: 10px; grid-template-columns: 28px 1fr 28px; }
+  .qa-q-text { font-size: 14px; }
+  .qa-a-inner { padding: 0 18px 20px 56px; }
+  .obs-card { grid-template-columns: 60px 1fr; padding: 28px; gap: 20px; }
+  .obs-num { font-size: 36px; line-height: 36px; }
+  .personal-statement, .geography-wrap, .tools-tier-card, .flow-card, .foot-card { padding: 28px; }
+  .ai-case { grid-template-columns: 1fr; }
+  .ai-case-tool { padding: 20px 24px; }
+  .ai-case-preview { aspect-ratio: 16/9; }
+  .ai-case-detail { grid-template-columns: 1fr; gap: 14px; padding: 20px 24px; }
+  .finding-card { grid-template-columns: 40px 1fr; padding: 20px; }
+  .finding-card .finding-tag { grid-column: 1 / -1; justify-self: start; }
+  .goal-open { font-size: 22px; line-height: 30px; }
+  .common-thread-text { font-size: 18px; line-height: 26px; }
+  .personal-statement { padding: 32px 28px; }
+  .foot-card { padding: 36px 28px; }
+  .foot h2 { font-size: 22px; line-height: 28px; }
+}
+
+@media print {
+  .nav, .foot, .cta-tabs { display: none; }
+  .page { display: block !important; }
+  body::before { display: none; }
+  section, .page { page-break-inside: avoid; padding: 30px 0; }
+  .shell, .qa-item-shell, .personal-statement-shell { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-shell">
+    <div class="nav-inner">
+      <button class="nav-brand" onclick="showPage('home')">Kiên <span>× BHS</span></button>
+      <button class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</button>
+      <ul class="nav-tabs" id="navTabs">
+        <li><button class="nav-tab active" data-page="home" onclick="showPage('home')">Profile</button></li>
+        <li><button class="nav-tab" data-page="workflow" onclick="showPage('workflow')">Workflow</button></li>
+        <li><button class="nav-tab" data-page="goals" onclick="showPage('goals')">Định hướng</button></li>
+        <li><button class="nav-tab" data-page="qa" onclick="showPage('qa')">Q&A</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="pill pill-accent">Candidate Profile</span>
+      <span class="hero-meta-bar">BHS Miền Nam · Marketing Executive · 2026</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1>Nguyễn Trung Kiên.<br><span class="accent">Marketing, 5 yrs.</span></h1>
+        <p class="hero-sub">
+          Agency, E-commerce, Web3. Ứng tuyển vị trí Marketing Executive tại BHS Miền Nam với mong muốn chuyển sang một ngành có sản phẩm thật, khách hàng thật, và chu kỳ đủ dài để xây sự nghiệp.
+        </p>
+      </div>
+
+      <div class="hero-portrait-shell">
+        <div class="hero-portrait">
+          <img src="assets/h%C3%ACnh_c%C3%A1_nh%C3%A2n.jpg" alt="Nguyễn Trung Kiên" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-label','Portrait');">
+          <div class="hero-portrait-caption">Nguyễn Trung Kiên · 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="meta-card">
+        <div class="meta-card-inner">
+          <div class="meta-label">Position</div>
+          <div class="meta-value">Marketing Executive</div>
+        </div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-card-inner">
+          <div class="meta-label">Experience</div>
+          <div class="meta-value">5 years</div>
+        </div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-card-inner">
+          <div class="meta-label">Interview</div>
+          <div class="meta-value">09:00 · 21/04/2026</div>
+        </div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-card-inner">
+          <div class="meta-label">Based in</div>
+          <div class="meta-value">Ho Chi Minh City</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION 1: EXPERIENCE -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">01 · Fit Assessment</div>
+      <h2 class="section-title">Overqualified <span class="accent">for Marketing.</span><br>Underqualified <span class="accent">for Real Estate.</span></h2>
+    </div>
+
+    <div class="status-grid">
+      <div class="shell shell-solid">
+        <div class="status-card over">
+          <div class="status-label">Marketing Experience</div>
+          <div class="status-word">Overqualified</div>
+          <div class="status-detail-primary">+4 năm so với JD</div>
+          <div class="status-detail-sub">Agency · E-commerce · Web3</div>
+        </div>
+      </div>
+
+      <div class="shell shell-solid">
+        <div class="status-card under">
+          <div class="status-label">Real Estate Experience</div>
+          <div class="status-word">Underqualified</div>
+          <div class="status-detail-primary">0 năm trong ngành</div>
+          <div class="status-detail-sub">Cần học sản phẩm · pháp lý</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="equation">
+      <div class="equation-content">
+        <span class="plus">+4 yrs</span> Marketing <span class="equal">·</span>
+        <span class="minus">−1 yr</span> Real Estate<br>
+        <span class="equal">=</span> <strong>Net +3, học ngành 2-4 tuần.</strong>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px;">
+      <div class="skill-section-title">Skill chuyển ngành áp dụng được ngay</div>
+      <div class="skill-strip">
+        <span class="skill-chip strong">Campaign Planning</span>
+        <span class="skill-chip strong">Media Plan</span>
+        <span class="skill-chip strong">CPL / CPQL / ROAS</span>
+        <span class="skill-chip strong">Content Strategy</span>
+        <span class="skill-chip">Funnel Optimization</span>
+        <span class="skill-chip">A/B Testing</span>
+        <span class="skill-chip">Community Building</span>
+        <span class="skill-chip">Cross-functional Team</span>
+        <span class="skill-chip">Briefing Creative</span>
+        <span class="skill-chip">Stakeholder Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: JOURNEY -->
+<section class="section" id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">02 · Career</div>
+      <h2 class="section-title">5 năm. 3 ngành.<br><span class="accent">Một ngôn ngữ chung.</span></h2>
+    </div>
+
+    <div class="journey-grid">
+      <div class="journey-card-shell">
+        <div class="journey-card">
+          <div class="journey-year">2020</div>
+          <div class="journey-co">Dizitech Agency</div>
+          <div class="journey-role">Marketing Executive</div>
+          <div class="journey-tags">
+            <span class="journey-tag">IMC Planning</span>
+            <span class="journey-tag">B2B + B2C</span>
+            <span class="journey-tag">Multi-industry</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-card-shell">
+        <div class="journey-card">
+          <div class="journey-year">2022</div>
+          <div class="journey-co">E-commerce</div>
+          <div class="journey-role">Performance Marketing</div>
+          <div class="journey-tags">
+            <span class="journey-tag">Paid Ads</span>
+            <span class="journey-tag">CPL / ROAS</span>
+            <span class="journey-tag">Data-driven</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-card-shell">
+        <div class="journey-card">
+          <div class="journey-year">2023</div>
+          <div class="journey-co">Tevel · XelebX · LIFE AI</div>
+          <div class="journey-role">Marketing & Community</div>
+          <div class="journey-tags">
+            <span class="journey-tag">Product Launch</span>
+            <span class="journey-tag">Community Ops</span>
+            <span class="journey-tag">Web3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="common-thread">
+      <div class="common-thread-label">Common Thread</div>
+      <div class="common-thread-text">
+        Hiểu đúng customer, chi đúng kênh, đo đúng số. <span class="accent">Đây là ngôn ngữ chung của 3 ngành, và cũng là hướng ngành bất động sản Việt Nam đang chuyển sang.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: BHS RESEARCH -->
+<section class="section" id="bhs-research">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">03 · BHS Research</div>
+      <h2 class="section-title">Quan sát hoạt động.<br><span class="accent">3 findings.</span></h2>
+    </div>
+
+    <div class="research-grid">
+      <div class="donut-card">
+        <h4>Content Distribution</h4>
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#F1F5F9" stroke-width="32"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#14B8A6" stroke-width="32"
+                  stroke-dasharray="329.87 439.82" stroke-dashoffset="0"
+                  stroke-linecap="round"
+                  transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#DBEAFE" stroke-width="32"
+                  stroke-dasharray="54.98 439.82" stroke-dashoffset="-329.87"
+                  transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#94A3B8" stroke-width="32"
+                  stroke-dasharray="54.98 439.82" stroke-dashoffset="-384.85"
+                  transform="rotate(-90 100 100)"/>
+          <text x="100" y="94" text-anchor="middle" font-size="22" font-weight="600" fill="#0F172A" letter-spacing="-0.5">Broker</text>
+          <text x="100" y="114" text-anchor="middle" font-size="11" fill="#64748B" font-weight="500">heavy</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="donut-legend-item">
+            <div class="donut-legend-color" style="background: #14B8A6;"></div>
+            <div class="donut-legend-label">B2B · Broker & Partner</div>
+            <div class="donut-legend-val">Majority</div>
+          </div>
+          <div class="donut-legend-item">
+            <div class="donut-legend-color" style="background: #DBEAFE;"></div>
+            <div class="donut-legend-label">B2C · End-user</div>
+            <div class="donut-legend-val">Minor</div>
+          </div>
+          <div class="donut-legend-item">
+            <div class="donut-legend-color" style="background: #94A3B8;"></div>
+            <div class="donut-legend-label">Internal</div>
+            <div class="donut-legend-val">Minimal</div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding-top: 14px; border-top: 0.8px solid var(--border-1); font-size: 11px; color: var(--text-muted); line-height: 16px; font-weight: 400; text-align: left; width: 100%;">
+          Observed pattern · Q1-Q2/2026<br>Source: Manus AI analysis
+        </div>
+      </div>
+
+      <div class="finding-list">
+        <div class="finding-card">
+          <div class="finding-num">01</div>
+          <div class="finding-content">
+            <h4>Broker network mạnh</h4>
+            <p>46 đối tác ký The Felix. Roadshow 3 miền. BHS R&D reports định kỳ.</p>
+          </div>
+          <div class="finding-tag">Strength</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-num">02</div>
+          <div class="finding-content">
+            <h4>B2C content dư địa rất lớn</h4>
+            <p>Content chủ yếu hướng broker và partner. End-user content chưa được đầu tư tương xứng với tiềm năng.</p>
+          </div>
+          <div class="finding-tag red">Opportunity</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-num">03</div>
+          <div class="finding-content">
+            <h4>TikTok & YouTube chưa khai thác</h4>
+            <p>Hai kênh reach end-user mạnh nhất 2026. BHS vẫn đang để ngỏ.</p>
+          </div>
+          <div class="finding-tag red">Opportunity</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="label-overline">Reference · BHS Miền Nam activities</div>
+      <div class="screenshots-row">
+        <div class="screenshot-item">
+          <img src="assets/%C4%90%E1%BB%90I_T%C3%81C_PH%C3%82N_PH%E1%BB%90I_CHI%E1%BA%BEN_L%C6%AF%E1%BB%A2C_D%E1%BB%B0_%C3%81N_SUNSHINE_BAY_RETREAT.jpg" alt="Đối tác phân phối chiến lược dự án Sunshine Bay Retreat">
+        </div>
+        <div class="screenshot-item">
+          <img src="assets/BHS_MI%E1%BB%80N_NAM_K%C3%8DCH_HO%E1%BA%A0T__%C4%90%C6%AF%E1%BB%9CNG_%C4%90UA__PERSA_PLACE.jpg" alt="BHS Miền Nam kích hoạt đường đua Persa Place">
+        </div>
+        <div class="screenshot-item">
+          <img src="assets/10_ng%C3%A0y_roadshow_V%C5%A9ng_T%C3%A0u_kh%E1%BB%9Fi_%C4%91%E1%BB%99ng_h%C3%ACnh_%E1%BA%A3nh_Beacon_Tower.jpg" alt="10 ngày roadshow Vũng Tàu khởi động Beacon Tower">
+        </div>
+        <div class="screenshot-item">
+          <img src="assets/2_BOOKING_SELAVIA_PH%C3%9A_QU%E1%BB%90C.jpg" alt="Top 2 Booking Selavia Phú Quốc">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CONTRIBUTION -->
+<section class="section" id="contribution">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">04 · Contribution Plan</div>
+      <h2 class="section-title">First 3 months: <span class="accent">deliver the job.</span><br>After that: <span class="accent">scale it up.</span></h2>
+    </div>
+
+    <div class="contrib-split">
+      <div class="contrib-col-shell">
+        <div class="contrib-col short">
+          <div class="contrib-col-header">
+            <div class="timing-pill">Month 01 — 03 · Short-term</div>
+            <h3>Làm đúng việc JD trước,<br>không tự ý mở rộng</h3>
+          </div>
+          <ul class="contrib-items">
+            <li>
+              <div class="num">01</div>
+              <div>
+                <h5>Lập Marketing Plan chi tiết cho dự án được giao <span class="contrib-priority">P1</span></h5>
+                <div class="task-meta">Media plan · Budget phase · KPI weekly</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">02</div>
+              <div>
+                <h5>Website audit & report</h5>
+                <div class="task-meta">15 trang dự án · Broken links · Content gaps</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">03</div>
+              <div>
+                <h5>B2C content pilot</h5>
+                <div class="task-meta">1 dự án · 3 posts/tuần · 4 tuần test</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">04</div>
+              <div>
+                <h5>CPL / CPQL tracking dashboard</h5>
+                <div class="task-meta">Google Sheet + Looker · Weekly review</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contrib-col-shell">
+        <div class="contrib-col long">
+          <div class="contrib-col-header">
+            <div class="timing-pill">Month 06 — 12 · Long-term</div>
+            <h3>Sau khi hiểu ngành<br>và được tin tưởng</h3>
+          </div>
+          <ul class="contrib-items">
+            <li>
+              <div class="num">01</div>
+              <div>
+                <h5>Chuẩn hóa Playbook per Tier</h5>
+                <div class="task-meta">Vingroup / Masterise / tỉnh</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">02</div>
+              <div>
+                <h5>Mở rộng Video channels</h5>
+                <div class="task-meta">TikTok · YouTube long-form</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">03</div>
+              <div>
+                <h5>Cross-project analytics</h5>
+                <div class="task-meta">Portfolio-level optimization</div>
+              </div>
+            </li>
+            <li>
+              <div class="num">04</div>
+              <div>
+                <h5>AI workflow integration</h5>
+                <div class="task-meta">Scale content production · giảm cost</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CTA -->
+<section class="section" id="cta">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">05 · More</div>
+      <h2 class="section-title">Ba phần chi tiết<br><span class="accent">ở các tab phụ.</span></h2>
+    </div>
+
+    <div class="cta-tabs">
+      <div class="cta-card-shell" onclick="showPage('workflow')">
+        <button class="cta-card">
+          <div class="cta-num">A.</div>
+          <h4>Workflow</h4>
+          <div class="arrow">Cách làm việc với AI →</div>
+        </button>
+      </div>
+
+      <div class="cta-card-shell" onclick="showPage('goals')">
+        <button class="cta-card">
+          <div class="cta-num">B.</div>
+          <h4>Định hướng 10 năm</h4>
+          <div class="arrow">Chu kỳ ngành BĐS 2026-2035 →</div>
+        </button>
+      </div>
+
+      <div class="cta-card-shell" onclick="showPage('qa')">
+        <button class="cta-card">
+          <div class="cta-num">C.</div>
+          <h4>Q&A Phỏng vấn</h4>
+          <div class="arrow">8 câu đã chuẩn bị →</div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============ WORKFLOW ============ -->
+<div class="page" id="page-workflow">
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="tab-indicator">Tab A · Workflow</div>
+    <h1>Marketing stack<br>& <span class="accent">AI augmentation</span>.</h1>
+    <p class="lede">Hai tầng công cụ. Tầng 1 là core skill hàng ngày. Tầng 2 là AI, có ví dụ cụ thể output và hiệu quả.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="tools-tier-card-shell">
+      <div class="tools-tier-card">
+        <div class="tier-pill">Tier 1 · Core Marketing Stack</div>
+        <h4>Công cụ hàng ngày, không đặc biệt nhưng bắt buộc.</h4>
+        <p class="sub">Không thuần thục những tool này thì không làm được công việc executor.</p>
+        <div class="base-tool-list">
+          <span class="base-tool-chip">Facebook Ads Manager</span>
+          <span class="base-tool-chip">Google Ads</span>
+          <span class="base-tool-chip">Google Analytics 4</span>
+          <span class="base-tool-chip">Zalo OA + Zalo Ads</span>
+          <span class="base-tool-chip">TikTok Ads Manager</span>
+          <span class="base-tool-chip">Google Sheets / Excel</span>
+          <span class="base-tool-chip">Canva</span>
+          <span class="base-tool-chip">CapCut</span>
+          <span class="base-tool-chip">Looker Studio</span>
+          <span class="base-tool-chip">Trello / Notion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools-tier-card-shell">
+      <div class="tools-tier-card">
+        <div class="tier-pill">Tier 2 · AI Augmentation</div>
+        <h4>Dùng cho tác vụ nào, output gì, hiệu quả ra sao.</h4>
+        <p class="sub">Mỗi tool có vai trò cụ thể. Human review ở bước cuối.</p>
+      </div>
+    </div>
+
+    <div class="ai-cases">
+      <div class="ai-case-shell">
+        <div class="ai-case">
+          <div class="ai-case-tool">
+            <div class="ai-case-tool-content">
+              <div class="ai-case-tool-name">Claude</div>
+              <div class="ai-case-tool-label">Plan + Research + Write</div>
+            </div>
+          </div>
+          <div class="ai-case-preview">
+            <img src="assets/Ads_proposal_design_by_Claude_Code.png" alt="Facebook Ads Plan - designed by Claude Code">
+            <div class="ai-case-preview-label">Ads Plan output</div>
+          </div>
+          <div class="ai-case-detail">
+            <div class="ai-case-col">
+              <div class="col-label">Use case</div>
+              <div class="col-value">Research ngành, lập Facebook Ads Plan, viết framework proposal, draft content A/B variants.</div>
+            </div>
+            <div class="ai-case-col output">
+              <div class="col-label">Output</div>
+              <div class="col-value">Facebook Ads Plan 20tr/tháng, campaign briefs, microsite này.</div>
+            </div>
+            <div class="ai-case-col effect">
+              <div class="col-label">Impact</div>
+              <div class="col-value">~20h work saved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-case-shell">
+        <div class="ai-case">
+          <div class="ai-case-tool">
+            <div class="ai-case-tool-content">
+              <div class="ai-case-tool-name">Manus</div>
+              <div class="ai-case-tool-label">Agentic Research</div>
+            </div>
+          </div>
+          <div class="ai-case-preview">
+            <img src="assets/Manus__nghi%C3%AAn_c%E1%BB%A9u_Facebook_BHS_Mi%E1%BB%81n_Nam.png" alt="Manus AI - nghiên cứu Facebook BHS Miền Nam">
+            <div class="ai-case-preview-label">BHS research</div>
+          </div>
+          <div class="ai-case-detail">
+            <div class="ai-case-col">
+              <div class="col-label">Use case</div>
+              <div class="col-value">Crawl và phân tích hoạt động Facebook BHS Miền Nam theo tuần. Tổng hợp pattern content và chiến lược promote dự án.</div>
+            </div>
+            <div class="ai-case-col output">
+              <div class="col-label">Output</div>
+              <div class="col-value">Bảng tracking weekly, insight pattern B2B vs B2C.</div>
+            </div>
+            <div class="ai-case-col effect">
+              <div class="col-label">Impact</div>
+              <div class="col-value">Auto-analysis agent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-case-shell">
+        <div class="ai-case">
+          <div class="ai-case-tool">
+            <div class="ai-case-tool-content">
+              <div class="ai-case-tool-name">Moda AI</div>
+              <div class="ai-case-tool-label">Brand Guideline</div>
+            </div>
+          </div>
+          <div class="ai-case-preview">
+            <img src="assets/AI_Design_x%C3%A2y_d%E1%BB%B1ng_brand_guideline.png" alt="AI Design - Brand guideline">
+            <div class="ai-case-preview-label">Brand guideline</div>
+          </div>
+          <div class="ai-case-detail">
+            <div class="ai-case-col">
+              <div class="col-label">Use case</div>
+              <div class="col-value">Build brand guideline nhanh với 2 concept options. Color system, typography, brand personality.</div>
+            </div>
+            <div class="ai-case-col output">
+              <div class="col-label">Output</div>
+              <div class="col-value">Brand guideline deck cho XayKenhTikTok (case thực tế).</div>
+            </div>
+            <div class="ai-case-col effect">
+              <div class="col-label">Impact</div>
+              <div class="col-value">Rút từ 1 tuần → 1 ngày</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-case-shell">
+        <div class="ai-case">
+          <div class="ai-case-tool">
+            <div class="ai-case-tool-content">
+              <div class="ai-case-tool-name">Freepik Pikaso</div>
+              <div class="ai-case-tool-label">Video + Visual AI</div>
+            </div>
+          </div>
+          <div class="ai-case-preview">
+            <img src="assets/Freepik_Pikaso_Design_VIdeo_AI_.png" alt="Freepik Pikaso - Design Video AI">
+            <div class="ai-case-preview-label">Video workflow</div>
+          </div>
+          <div class="ai-case-detail">
+            <div class="ai-case-col">
+              <div class="col-label">Use case</div>
+              <div class="col-value">Before/after transformation cho dự án BĐS. Gen video từ ảnh tĩnh, concept visual trước khi brief.</div>
+            </div>
+            <div class="ai-case-col output">
+              <div class="col-label">Output</div>
+              <div class="col-value">Video preview dự án Gold Coast, concept social post.</div>
+            </div>
+            <div class="ai-case-col effect">
+              <div class="col-label">Impact</div>
+              <div class="col-value">Cost ~0đ / test</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-case-shell">
+        <div class="ai-case">
+          <div class="ai-case-tool">
+            <div class="ai-case-tool-content">
+              <div class="ai-case-tool-name">Vibe Coding</div>
+              <div class="ai-case-tool-label">Microsite + Tools</div>
+            </div>
+          </div>
+          <div class="ai-case-preview">
+            <img src="assets/AI_VIBE__CODE_Design_Website_.png" alt="AI Vibe-coding - Design Website">
+            <div class="ai-case-preview-label">This microsite</div>
+          </div>
+          <div class="ai-case-detail">
+            <div class="ai-case-col">
+              <div class="col-label">Use case</div>
+              <div class="col-value">Build microsite ứng tuyển, landing page dự án, internal tools bằng natural language, không cần dev team.</div>
+            </div>
+            <div class="ai-case-col output">
+              <div class="col-label">Output</div>
+              <div class="col-value">Website này là case demo. Production-ready trong 3 ngày.</div>
+            </div>
+            <div class="ai-case-col effect">
+              <div class="col-label">Impact</div>
+              <div class="col-value">Dev cost: 0đ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-card-shell">
+      <div class="flow-card">
+        <div class="flow-title">End-to-end Flow · TikTok content production</div>
+        <p class="flow-desc">Cách kết hợp tool để ra 1 content review 60 giây. Từ research đến đăng trong 3-4 tiếng.</p>
+
+        <div class="flow-diagram">
+          <div class="flow-step">
+            <div class="flow-step-num">01</div>
+            <h5>Research</h5>
+            <div class="flow-tool">Perplexity<br>Claude</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">02</div>
+            <h5>Script</h5>
+            <div class="flow-tool">Claude</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">03</div>
+            <h5>Visual</h5>
+            <div class="flow-tool">Pikaso<br>Canva</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">04</div>
+            <h5>Edit</h5>
+            <div class="flow-tool">CapCut</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">05</div>
+            <h5>Caption</h5>
+            <div class="flow-tool">Claude<br>Manual</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">06</div>
+            <h5>Post + Track</h5>
+            <div class="flow-tool">Native<br>GA4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============ GOALS ============ -->
+<div class="page" id="page-goals">
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="tab-indicator">Tab B · Long-term Vision</div>
+    <h1>10 năm tới của<br>bất động sản Việt Nam.<br><span class="accent">Và chỗ đứng</span> muốn có trong đó.</h1>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+
+    <p class="goal-open">
+      Ngành BĐS Việt Nam vừa đi qua chu kỳ 2022-2024. 2026 là điểm khởi đầu của chu kỳ mới. <span class="accent">Đây là giai đoạn muốn tham gia từ đầu.</span>
+    </p>
+
+    <div class="observations">
+      <div class="obs-card-shell">
+        <div class="obs-card">
+          <div class="obs-num">01</div>
+          <div class="obs-content">
+            <h4>Market shifting ra khỏi trung tâm.</h4>
+            <p>Sài Gòn và Hà Nội không còn là toàn bộ câu chuyện. Long An, Bình Dương, Bình Thuận, Khánh Hòa đang hút vốn lớn. Cam Ranh chỉ 15 năm trước gần như bãi đất trống, giờ có hầu hết các tên lớn trong ngành.</p>
+            <p><strong>BHS Miền Nam đang phân phối dự án ở đúng các khu vực này.</strong> Cơ hội học marketing cho nhiều thị trường khác nhau trong cùng một công ty.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="obs-card-shell">
+        <div class="obs-card">
+          <div class="obs-num">02</div>
+          <div class="obs-content">
+            <h4>Buyer persona đang trẻ hóa.</h4>
+            <p>Nhóm 30-40 tuổi, digital native, đang bắt đầu mua căn hộ đầu tiên. Họ research 3-6 tháng trước khi đến showroom. Xem TikTok nhiều hơn đọc brochure. Tin review hơn quảng cáo chính thống.</p>
+            <p><strong>Cách tiếp cận họ không thể giống thế hệ trước.</strong> Cá nhân thuộc đúng nhóm này, sử dụng đúng những kênh họ dùng, ra quyết định theo cách họ ra quyết định.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="obs-card-shell">
+        <div class="obs-card">
+          <div class="obs-num">03</div>
+          <div class="obs-content">
+            <h4>Marketing BĐS chuyển từ channel spending sang performance.</h4>
+            <p>Nhiều team vẫn làm mô hình cũ: chạy nhiều FB Ads, thuê nhiều KOL, tổ chức nhiều event. Chi phí lead đang tăng, kênh bão hòa, khách trẻ không còn phản ứng với quảng cáo ồn ào.</p>
+            <p><strong>Team thắng trong chu kỳ tới là team biết đo từng đồng đi đâu và cắt kênh không hiệu quả.</strong> Kỷ luật này đến từ E-commerce và Web3, và là phần đóng góp rõ ràng nhất sau khi học xong sản phẩm BĐS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-statement-shell">
+      <div class="personal-statement">
+        <div class="personal-statement-content">
+          <div class="label">Long-term Position</div>
+          <h3>Không phải chức danh cụ thể sau 5 năm.<br>Là <span class="accent">câu chuyện đủ dài</span> để kể về một nơi đã ở.</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="geography-shell">
+      <div class="geography-wrap">
+        <h3>Hai thành phố, một đường nghề.</h3>
+
+        <div class="geography-grid">
+          <div class="geo-card hcm">
+            <div class="geo-tag">Ho Chi Minh City · Workplace</div>
+            <h5>Trung tâm kinh tế, trung tâm cơ hội</h5>
+            <p>HCM tập trung hầu hết các CĐT lớn và chiếm phần lớn giá trị giao dịch BĐS miền Nam. Làm marketing ở đây 5 năm đầu sẽ tiếp xúc đầy đủ phân khúc, đầy đủ dạng khách hàng.</p>
+            <p>BHS Miền Nam có trụ sở tại Q2, phân phối xuyên suốt từ nội đô đến tỉnh vệ tinh. Môi trường phù hợp cho giai đoạn xây nền tảng.</p>
+          </div>
+
+          <div class="geo-card kh">
+            <div class="geo-tag">Khánh Hòa · Hometown</div>
+            <h5>Từ quê hương đến địa bàn nghề</h5>
+            <p>Cam Ranh và Nha Trang đang là hai thị trường nghỉ dưỡng tăng trưởng nhanh nhất miền Trung. Các CĐT lớn đã vào: Vingroup, Masterise, Novaland, KN Golf Links.</p>
+            <p>Gia đình ở Khánh Hòa nghĩa là hiểu thị trường từ góc nhìn người sống tại địa phương. Lợi thế dài hạn nếu BHS mở rộng hoạt động ra khu vực này.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============ QA ============ -->
+<div class="page" id="page-qa">
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="tab-indicator">Tab C · Interview Q&A</div>
+    <h1>8 câu <span class="accent">đã suy nghĩ</span><br>trước buổi phỏng vấn.</h1>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="qa-list">
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">01</div>
+            <div class="qa-q-text">"Em chưa làm BĐS bao giờ, làm sao làm được?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em không giấu việc chưa làm BĐS. Nhưng 5 năm em làm Marketing qua nhiều ngành, điểm chung là em luôn bắt đầu bằng việc hiểu customer journey và đo từng kênh."</p>
+              <p>"BĐS có đặc thù phễu dài và giá trị đơn hàng lớn, nhưng bản chất logic Marketing giống nhau: <span class="highlight">đúng người, đúng thông điệp, đúng thời điểm</span>. Em sẵn sàng dành 2-4 tuần đầu học sản phẩm, pháp lý cơ bản, và tâm lý khách BĐS."</p>
+              <p>"Anh/chị có thể test em với 1 dự án nhỏ. Nếu em không làm được trong 6-8 tuần, em chấp nhận đánh giá lại."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">02</div>
+            <div class="qa-q-text">"Sao đang làm Web3 lại chuyển sang BĐS?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em làm Web3 3 năm, thấy đây là ngành có nhiều cái hay về tư duy đổi mới. Nhưng sản phẩm Web3 phần lớn chỉ có vòng đời vài tuần đến vài tháng, khách hàng nhiều khi là investor tìm airdrop hơn là người dùng thật."</p>
+              <p>"Em chuyển sang BĐS vì muốn làm marketing cho sản phẩm có khách thật, và có thời gian đủ dài để làm đúng thay vì làm nhanh."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">03</div>
+            <div class="qa-q-text">"Lương 17-20tr em có ok không? Em có 5 năm kinh nghiệm mà?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em hiểu đây là mức lương theo level vị trí, không phải theo năm kinh nghiệm của em. Và vì em chưa có kinh nghiệm BĐS, mức này em thấy hợp lý cho giai đoạn đầu."</p>
+              <p>"Em chấp nhận nếu có lộ trình rõ ràng sau 6 tháng đến 1 năm, cộng với HH thực tế theo doanh số dự án. Em quan tâm HH được tính thế nào ạ?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">04</div>
+            <div class="qa-q-text">"Em hình dung plan Marketing cho 1 dự án BĐS thế nào?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em hình dung 4 phase theo phễu bán BĐS:"</p>
+              <ul>
+                <li><strong>P1 Teaser (1-2 tháng trước mở bán):</strong> PR, content vị trí, tiện ích. Khoảng 20% budget.</li>
+                <li><strong>P2 Kick-off (tháng mở bán):</strong> FB Ads, KOL, landing page, sự kiện mở bán. Khoảng 40% budget.</li>
+                <li><strong>P3 Booking và Deposit:</strong> Retargeting, Zalo Ads, telesale support. Khoảng 30% budget.</li>
+                <li><strong>P4 Closing:</strong> Remarketing lead cũ, referral. Khoảng 10% budget.</li>
+              </ul>
+              <p>"Đây là framework em hình dung dựa trên logic marketing chung. Em chắc chắn cần anh/chị hiệu chỉnh theo đặc thù BĐS và dự án cụ thể của BHS."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">05</div>
+            <div class="qa-q-text">"Tại sao nên nhận em thay vì bạn có 3 năm BĐS?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Nếu anh/chị cần người vận hành plan BĐS có sẵn, bạn 3 năm trong ngành sẽ nhanh hơn em trong 6 tháng đầu."</p>
+              <p>"Nhưng nếu anh/chị muốn người biết đặt câu hỏi <span class="highlight">'kênh này còn hiệu quả không?'</span>, <span class="highlight">'có kênh mới nào đáng thử không?'</span> và dám test, đo, cắt, thì đó là thế mạnh của em."</p>
+              <p>"Em đã làm điều này ở 3 ngành khác nhau. Vấn đề còn lại là em học ngành BĐS có kịp không, và em cam kết với anh/chị là có."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">06</div>
+            <div class="qa-q-text">"Em đã tìm hiểu gì về BHS?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em đã nghiên cứu khá kỹ. BHS Group là hệ sinh thái 8 mảng từ R&D, Concept, đến phân phối qua bcompass, quản lý qua bpmax và fintech qua fmax. Không chỉ sàn phân phối, mà là cầu nối chiến lược với CĐT."</p>
+              <p>"BHS Miền Nam đang phân phối mix dự án từ Vingroup, Masterise, Gamuda đến các dự án tỉnh như Bình Thuận, Long An."</p>
+              <p>"Em cũng dành thời gian phân tích hoạt động Facebook của BHS để hiểu pattern truyền thông. Có một vài quan sát em đã ghi lại, nếu anh/chị muốn trao đổi thêm."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">07</div>
+            <div class="qa-q-text">"Em làm website này mất bao lâu? Công ty nào em cũng làm vậy à?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em làm trong khoảng 3 ngày trước buổi phỏng vấn. Nội dung trong đó là phần em tổng hợp lại quá trình research về BHS."</p>
+              <p>"Em không làm cho mọi công ty em apply. Em chỉ đầu tư thời gian cho những công ty em thực sự muốn gia nhập. BHS là một trong số đó."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item-shell" onclick="toggleQA(this)">
+        <div class="qa-item">
+          <div class="qa-q">
+            <div class="qa-num">08</div>
+            <div class="qa-q-text">"Em hình dung làm gì trong 3 tháng đầu?"</div>
+            <div class="qa-toggle">+</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-a-inner">
+              <p>"Em hình dung 3 giai đoạn, tập trung vào việc chính JD giao:"</p>
+              <ul>
+                <li><strong>Tháng 1, hiểu sản phẩm và team:</strong> Đi thực địa các dự án đang phân phối. Phỏng vấn sales senior để hiểu khách hàng thực. Học pháp lý BĐS cơ bản.</li>
+                <li><strong>Tháng 2, lập plan chi tiết cho dự án được giao:</strong> Plan 12 tuần với budget theo phase, KPI từng tuần. Trình Trưởng phòng duyệt và điều chỉnh.</li>
+                <li><strong>Tháng 3, triển khai và báo cáo:</strong> Chạy plan, báo cáo tuần, điều chỉnh theo dữ liệu thực tế.</li>
+              </ul>
+              <p>"Mục tiêu 3 tháng đầu không phải tạo đột phá. Là trở thành người Marketing reliable. Plan ra là chạy được, chi tiêu đúng, số báo đúng, và đội sales tin tưởng được."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-shell">
+      <div class="foot-card">
+        <div class="foot-grid">
+          <div>
+            <h2>Thank you for the time.<br>See you on April 21.</h2>
+            <div class="foot-contact">
+              <a href="mailto:kelvin.nkienwow@gmail.com">kelvin.nkienwow@gmail.com</a> · <a href="https://linkedin.com/in/kelvin-ng-t" target="_blank">LinkedIn</a> · <a href="https://nkien21cv.github.io/KelvinPortfolio/" target="_blank">Portfolio</a>
+            </div>
+          </div>
+          <div class="foot-sig">
+            <div class="name">Nguyễn Trung Kiên</div>
+            <div class="role">Marketing · 5 yrs · HCMC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll(`.nav-tab[data-page="${pageId}"]`).forEach(t => t.classList.add('active'));
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.getElementById('navTabs').classList.remove('mobile-open');
+}
+
+function toggleMobileNav() {
+  document.getElementById('navTabs').classList.toggle('mobile-open');
+}
+
+function toggleQA(el) {
+  el.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
